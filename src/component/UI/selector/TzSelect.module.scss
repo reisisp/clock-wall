@@ -1,0 +1,65 @@
+.select {
+    width: 100%;
+    position: relative;
+    &.isactive .select__body {
+        display: block;
+    }
+    &.isactive .select__header {
+        border: 1px solid gray;
+    }
+    &__header {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        box-sizing: border-box;
+        border: 1px solid gray;
+        border-radius: 6px;
+        &:hover {
+            border: 1px solid lightgray;
+        }
+    }
+    &__current {
+        padding: 14px;
+    }
+    &__selected {
+        padding: 14px;
+    }
+    &__icon {
+        content: "";
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        display: inline-block;
+        transform: rotate(45deg);
+        border-bottom: 2px solid gray;
+        border-right: 2px solid gray;
+        width: 8px;
+        height: 8px;
+    }
+    &.isactive .select__icon {
+        transform: rotate(225deg);
+        top: 20px;
+    }
+    &__body {
+        background-color: white;
+        display: none;
+        z-index: 999;
+        overflow: auto;
+        height: 180px;
+        position: absolute;
+        margin-top: 4px;
+        left: 0;
+        right: 0;
+        top: 100%;
+        border: 1px solid lightgray;
+        border-radius: 6px;
+    }
+    &__item {
+        cursor: pointer;
+        padding: 12px 12px 11px 15px;
+        &:hover {
+            background-color: lightgray;
+        }
+    }
+}

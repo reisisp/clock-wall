@@ -1,0 +1,65 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+}
+
+.select {
+    position: relative;
+    &.isactive .select__body {
+        display: block;
+    }
+
+    &__header {
+        display: flex;
+        cursor: pointer;
+    }
+    &__current {
+        padding: 14px;
+    }
+    &__selected {
+        padding: 14px;
+    }
+    &__icon {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        display: inline-block;
+        transform: rotate(45deg);
+        border-bottom: 2px solid gray;
+        border-right: 2px solid gray;
+        width: 8px;
+        height: 8px;
+    }
+    &.isactive .select__icon {
+        transform: rotate(225deg);
+        top: 10px;
+    }
+    &__body {
+        width: 200px;
+        background-color: white;
+        display: none;
+        z-index: 999;
+        overflow: auto;
+        height: 180px;
+        position: absolute;
+        margin-top: 4px;
+        left: 0;
+        right: 0;
+        top: 100%;
+        border: 1px solid lightgray;
+        border-radius: 6px;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        padding: 10px 5px;
+        &:hover {
+            background-color: lightgray;
+        }
+    }
+}

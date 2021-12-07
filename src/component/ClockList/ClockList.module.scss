@@ -1,0 +1,11 @@
+.clocklist {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 470px) {
+    .clocklist {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+}
